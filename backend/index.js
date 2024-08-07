@@ -9,7 +9,7 @@ const port = 3001;
 app.use(express.json());
 app.use(cors());
 
-app.use('/main', mainRouter);
+app.use('/', mainRouter);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
   //remove

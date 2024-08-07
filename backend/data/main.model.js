@@ -19,15 +19,9 @@ const expenseSchema = new mongoose.Schema({
 
 // Define the owing schema
 const owingSchema = new mongoose.Schema({
-    amount: {
-        type: Number,
-        default: 0,
-    },
-    person: {
-        type: String,
-        required: true,
-    }
-});
+    person: { type: String, required: true },
+    amount: { type: Number, required: true, min: 0 }
+  });
 
 // Define the main schema
 const mainSchema = new mongoose.Schema({

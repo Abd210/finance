@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card budget-card">
+        <div class="budget">
+          <h4>Daily Budget</h4>
+          <p>{{ budget }} Lei</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card standard-card">
+        <div class="amount">
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Income</h4>
+              <p>{{ income }} Lei</p>
+            </div>
+            <div class="col-md-6">
+              <h4>Cash</h4>
+              <p>{{ cash }} Lei</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Savings</h4>
+              <p>{{ savings }} Lei</p>
+            </div>              
+            <div class="col-md-6">
+              <h4>Owed</h4>
+              <p>{{ totalOwing }} Lei</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card standard-card">
+        <div class="owing-details">
+          <h4>Owing Details</h4>
+          <ul>
+            <li *ngFor="let owe of owing">
+              {{ owe.person }}: {{ owe.amount }} Lei
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="">
+      <div class="card standard-card">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Purpose</th>
+                <th>Category</th>
+                <th>Sum</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let expense of expenses">
+                <td>{{ expense.purpose }}</td>
+                <td>{{ expense.category }}</td>
+                <td>{{ expense.sum }} Lei</td>
+                <td>{{ expense.date | date:'yyyy-MM-dd' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

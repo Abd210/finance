@@ -103,47 +103,48 @@ const mainService = {
 
     },
     addOwing: async (amount) => {
-        console.log("You reached add owing service");
-        console.log(amount);
+      console.log("You reached add owing service");
+      console.log(amount);  // Log the data received
     
-        try {
-          // Find an existing document, assuming there's only one document in the collection
-          let mainDoc = await Main.findOne();
+      const { amount: amountValue, person } = amount.owingData; // Destructure the actual values
     
-          if (mainDoc) {
-            // Find the existing owing entry for the specified person
-            const owingEntry = mainDoc.owing.find(entry => entry.person === amount.person);
+      try {
+        let mainDoc = await Main.findOne();
     
-            if (owingEntry) {
-              // Update the existing entry's amount
-              owingEntry.amount = (Number(owingEntry.amount) || 0) + Number(amount.amount);
-            } else {
-              // Add a new owing entry if the person doesn't already exist
-              mainDoc.owing.push({
-                person: amount.person,
-                amount: Number(amount.amount),
-              });
-            }
+        if (mainDoc) {
+          const owingEntry = mainDoc.owing.find(entry => entry.person === person);
     
-            await mainDoc.save();
+          if (owingEntry) {
+            console.log("Owing entry found");
+            owingEntry.amount = (Number(owingEntry.amount) || 0) + Number(amountValue);
           } else {
-            // Create a new document with the provided owing
-            mainDoc = new MainModel({
-              owing: [{
-                person: amount.person,
-                amount: Number(amount.amount),
-              }],
+            console.log("Owing entry not found");
+            mainDoc.owing.push({
+              person: person,
+              amount: Number(amountValue), // Ensure this is a number
             });
-            await mainDoc.save();
           }
     
-          console.log("Owing successfully added or updated");
-          return mainDoc;
-        } catch (error) {
-          console.error("Error in addOwing service:", error);
-          throw error;
+          await mainDoc.save();
+        } else {
+          mainDoc = new Main({
+            owing: [{
+              person: person,
+              amount: Number(amountValue), // Ensure this is a number
+            }],
+          });
+          await mainDoc.save();
         }
-      },
+    
+        console.log("Owing successfully added or updated");
+        return mainDoc;
+      } catch (error) {
+        console.error("Error in addOwing service:", error);
+        throw error;
+      }
+    }
+    
+    ,
       getBudget: async () => {
         console.log("You reached get budget service");
         try {

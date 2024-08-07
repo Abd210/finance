@@ -1,0 +1,8 @@
+<div class="card">
+    <h4>Add Expense</h4>
+    <input type="text" [(ngModel)]="expensePurpose" placeholder="Enter purpose" required>
+    <input type="text" [(ngModel)]="expenseCategory" placeholder="Enter category" required>
+    <input type="number" [(ngModel)]="expenseAmount" placeholder="Enter amount" required>
+    <button (click)="addExpense()">Add</button>
+  </div>
+  

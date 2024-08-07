@@ -1,0 +1,44 @@
+.card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.card h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #1A1A1A;
+}
+
+input[type="text"], input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #F6F6F6;
+    color: #333333;
+}
+
+input[type="text"]::placeholder, input[type="number"]::placeholder {
+    color: #999999;
+}
+
+button {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
