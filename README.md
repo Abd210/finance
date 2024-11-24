@@ -1,10 +1,15 @@
+
 # Personal Finance Management Tool
 
 A responsive and intuitive tool designed to help you track expenses, manage savings, and visualize your financial data.
 
+---
+
 ## 📝 Project Overview
 
 This personal finance management web application streamlines the process of managing budgets, tracking expenses, and monitoring savings. The application focuses on security, usability, and scalability, providing a complete solution for personal financial management.
+
+---
 
 ### 🌟 Key Features
 
@@ -20,10 +25,10 @@ This personal finance management web application streamlines the process of mana
 
 ## 💻 Technologies Used
 
-- **Frontend**: Angular
-- **Backend**: Express.js
-- **Database**: MongoDB
-- **Design Tool**: Figma
+- **Frontend**: Angular  
+- **Backend**: Express.js  
+- **Database**: MongoDB  
+- **Design Tool**: Figma  
 
 ---
 
@@ -49,44 +54,82 @@ The backend, powered by Express.js, offers a comprehensive set of API endpoints 
 - `GET /getSavings`: Retrieve saved amounts.
 - `GET /getOwing`: Fetch owing (debts) information.
 
-### Error Handling
+### **Error Handling**
 Each endpoint includes error handling to ensure smooth operation and provides detailed error messages in case of failure (e.g., `500 Internal Server Error`).
 
 ---
 
 ## 📅 Development Timeline
 
-- **June 2024 – July 2024**
-  - Designed the application using Figma.
-  - Developed a responsive frontend with Angular.
-  - Built backend APIs with Express.js.
-  - Integrated MongoDB for secure and scalable data storage.
+- **June 2024 – July 2024**  
+  - Designed the application using Figma.  
+  - Developed a responsive frontend with Angular.  
+  - Built backend APIs with Express.js.  
+  - Integrated MongoDB for secure and scalable data storage.  
 
 ---
 
 ## 🛠️ Installation and Setup
 
-1. **Clone the repository**:
+1. **Clone the repository**:  
    ```bash
    git clone https://github.com/yourusername/finance-management-tool.git
+   ```
+
+2. **Navigate to the project directory**:  
+   ```bash
+   cd finance-management-tool
+   ```
+
+3. **Install backend dependencies**:  
+   ```bash
+   npm install
+   ```
+
+4. **Start the backend server**:  
+   ```bash
+   npm start
+   ```
+
+5. **Navigate to the Angular frontend directory**:  
+   ```bash
+   cd frontend
+   ```
+
+6. **Install frontend dependencies**:  
+   ```bash
+   npm install
+   ```
+
+7. **Run the frontend**:  
+   ```bash
+   ng serve
+   ```
+
+8. **Access the application**:  
+   Open your browser and go to `http://localhost:4200`.
+
+---
 
 
-Navigate to the project directory:
+## 🤝 Contribution
 
-cd finance-management-tool
-Install backend dependencies:
+Contributions are welcome! If you’d like to contribute:
 
-npm install
-Start the backend server:
+1. **Fork the repository**.  
+2. **Create a feature branch**:  
+   ```bash
+   git checkout -b feature-name
+   ```
 
-npm start
-Navigate to the Angular frontend directory:
+3. **Commit your changes**:  
+   ```bash
+   git commit -m "Add feature"
+   ```
 
-cd frontend
-Install frontend dependencies:
+4. **Push to the branch**:  
+   ```bash
+   git push origin feature-name
+   ```
 
-npm install
-Run the frontend:
-
-ng serve
-Access the application: Open your browser and go to http://localhost:4200.
+5. **Submit a pull request**.
